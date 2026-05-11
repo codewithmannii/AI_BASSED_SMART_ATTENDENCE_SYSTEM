@@ -1,80 +1,190 @@
-# 🎓 Smart Classroom Student Monitoring System
+# 🎓 AI-Powered Smart Attendance Monitoring
 
-This project is a **Real-Time AI-Powered Classroom Monitoring System** that tracks and evaluates student behaviors such as hand-raising, head position, emotion, and body posture using computer vision and deep learning techniques. It aims to provide automated attendance and attention analysis during online or physical classroom sessions.
-
-## 🧠 Features
-
-### 📌 1. Hand Raise Detection (`HandRaiseDetection.py`)
-- Detects if a student has raised their hand during class.
-- Recognizes faces using ORB descriptors and OpenCV's DNN Face Detector.
-- Attendance is marked in `attendance.xlsx` with hand-raising status.
-
-### 📌 2. Head Position & Attention Detection (`headposition.py`)
-- Uses face mesh and pose estimation to determine if the student is looking at the instructor or distracted.
-- Trains a face recognizer using student images.
-- Logs attention status to `attention.xlsx`.
-
-### 📌 3. Emotion Detection (`emotion.py`)
-- Recognizes real-time facial emotions using a pre-trained CNN (`emotion_detection_model.h5`).
-- Identifies students by comparing detected faces with saved student images.
-- Logs the most frequently detected emotion in `emotion_attendance.xlsx`.
-
-### 📌 4. Body Language Analysis (`BodyLanguageAnalysis.py`)
-- Tracks student posture and detects head tilt using MediaPipe Pose.
-- Recognizes students and logs their attentiveness to `student_attendance.xlsx`.
+An AI-based Smart Classroom Monitoring System that automates attendance and analyzes student behavior in real time using Computer Vision and Deep Learning techniques. The system tracks hand raise activity, student attention, body posture, and facial emotions using OpenCV, MediaPipe, and TensorFlow.
 
 ---
 
-## 🛠️ Requirements
+## 🚀 Features
 
-- Python 3.7+
-- Required Libraries:
-  pip install opencv-python mediapipe tensorflow pandas openpyxl
+### 📌 Hand Raise Detection
 
+* Detects raised hands in real time using MediaPipe Hands.
+* Recognizes students using face recognition techniques.
+* Automatically records participation status in Excel.
 
-🗂️ Folder Structure
-project/
+### 📌 Head Position & Attention Monitoring
+
+* Tracks student head position and posture.
+* Determines whether the student is attentive or distracted.
+* Uses MediaPipe Pose for landmark detection.
+
+### 📌 Emotion Detection
+
+* Detects facial emotions using a pre-trained CNN model.
+* Supports real-time emotion analysis through webcam input.
+* Emotion logs are stored automatically.
+
+### 📌 Automated Attendance System
+
+* Recognizes students using stored face images.
+* Prevents proxy attendance through facial verification.
+* Stores attendance data in Excel files.
+
+---
+
+## 🛠️ Technologies Used
+
+* Python
+* OpenCV
+* MediaPipe
+* TensorFlow / Keras
+* NumPy
+* Pandas
+* OpenPyXL
+
+---
+
+## 📂 Project Structure
+
+```bash
+AI-Powered-Smart-Attendance-Monitoring/
 │
 ├── HandRaiseDetection.py
-├── headposition.py
 ├── emotion.py
+├── headposition.py
 ├── BodyLanguageAnalysis.py
-├── student image/              # Folder containing student face images
-├── emotion_detection_model.h5 # Trained emotion model (required for emotion.py)
-├── attendance.xlsx             # Generated: Hand raise log
-├── attention.xlsx              # Generated: Head position log
-├── emotion_attendance.xlsx     # Generated: Emotion log
-└── student_attendance.xlsx     # Generated: Posture-based attention log
-
-🖼️ Student Images
-Place individual student face images inside the student image folder. Image file names should be the student's name (e.g., john_doe.jpg).
-
- 📦 How to Run
-Each script can be run independently based on the feature you'd like to use:
-python HandRaiseDetection.py
-python headposition.py
-python emotion.py
-python BodyLanguageAnalysis.py
-
-Press q to stop webcam and save logs.
-
-🔍 Use Cases
-Real-time classroom engagement tracking.
-Automated attendance and behavior logging.
-Emotion monitoring for student well-being.
-Instructor feedback and personalized intervention.
-
-👨‍💻 Author
-Ch Atul Kumar Prusty
-📷 Linkedin: [https://www.linkedin.com/in/chatulkumarprusty/]
-📧 Email: [chatulprusty@gmail.com]
-
+├── student image/
+├── emotion_detection_model.h5
+├── attendance.xlsx
+├── emotion_attendance.xlsx
+├── attention.xlsx
+└── student_attendance.xlsx
+```
 
 ---
 
-Let me know if you want me to include:
-- GIFs/screenshots for each feature
-- Instructions for training your own emotion model
-- A `requirements.txt` or `setup.py` file
+## ⚙️ Installation
 
-Want me to generate the `requirements.txt` for you too?
+### 1️⃣ Clone Repository
+
+```bash
+git clone https://github.com/codewithmannii/AI_BASSED_SMART_ATTENDENCE_SYSTEM.git
+```
+
+### 2️⃣ Navigate to Project Folder
+
+```bash
+cd AI_BASSED_SMART_ATTENDENCE_SYSTEM
+```
+
+### 3️⃣ Create Virtual Environment
+
+```bash
+python -m venv venv
+```
+
+### 4️⃣ Activate Virtual Environment
+
+#### Windows
+
+```bash
+venv\Scripts\activate
+```
+
+### 5️⃣ Install Dependencies
+
+```bash
+pip install opencv-python mediapipe tensorflow pandas openpyxl numpy
+```
+
+---
+
+## ▶️ How to Run
+
+### Hand Raise Detection
+
+```bash
+python HandRaiseDetection.py
+```
+
+### Emotion Detection
+
+```bash
+python emotion.py
+```
+
+### Head Position Detection
+
+```bash
+python headposition.py
+```
+
+### Body Language Analysis
+
+```bash
+python BodyLanguageAnalysis.py
+```
+
+Press `q` to stop the webcam.
+
+---
+
+## 🖼️ Student Images
+
+Store student images inside the `student image` folder.
+
+Example:
+
+```bash
+student image/
+   mayank.jpg
+   rahul.jpg
+```
+
+---
+
+## 📊 Output
+
+The system automatically generates Excel files such as:
+
+* `attendance.xlsx`
+* `emotion_attendance.xlsx`
+* `attention.xlsx`
+* `student_attendance.xlsx`
+
+These files contain attendance and behavioral analysis logs.
+
+---
+
+## 🎯 Use Cases
+
+* Smart Classroom Monitoring
+* Automated Attendance Tracking
+* Student Engagement Analysis
+* AI-Based Behavior Monitoring
+* Real-Time Classroom Analytics
+
+---
+
+## 🔮 Future Improvements
+
+* Cloud Database Integration
+* Web Dashboard for Analytics
+* Multi-Classroom Support
+* Improved AI Accuracy
+* Mobile App Integration
+
+---
+
+## 👨‍💻 Author
+
+### Mayank Gandhi
+
+📧 Email: [mayankgandhi1114@gmail.com](mailto:mayankgandhi1114@gmail.com)
+
+🔗 LinkedIn: https://www.linkedin.com/in/mayank-gandhi-01b87a251/
+
+💻 GitHub: https://github.com/codewithmannii
+
+---
+
